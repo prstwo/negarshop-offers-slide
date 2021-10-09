@@ -74,22 +74,6 @@
                                 </li>
                               </ul>
                             </div>
-                            <div @mouseover="countDown(index, offers.countdownRemain)" class="gallery-main-countdown w-full mb-10" v-if="hasCountdown">
-                                <span id="seconds{{index}}" class="number-countdown-container number-countdown-seconds">
-                                    <span></span>
-                                </span>
-                              <span id="minutes{{index}}" class="number-countdown-container number-countdown-minutes">
-                                <span></span>
-                            </span>
-                              <span id="hours{{index}}" class="number-countdown-container number-countdown-hour">
-                                <span></span>
-                            </span>
-                              <span id="days{{index}}" class="number-countdown-container number-countdown-day">
-                                <span></span>
-                            </span>
-                            </div>
-
-
                             <div class="gallery-main-progress w-full  font-bold">
                               <div class="w-full flex flex-row justify-between">
                                 <div>
@@ -267,36 +251,6 @@ export default {
 
 
         ]
-        ,makeTimer(pid,date) {
-      date = date.replace(' ','T');
-      var endTime = Date.parse(date)/ 1000;
-      var now = new Date()/ 1000;
-      var timeLeft = endTime - now;
-      var days = Math.floor(timeLeft / 86400);
-      var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-      var minutes = Math.floor((timeLeft - (days * 86400) - (hours *
-          3600)) / 60);
-      var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600)
-          - (minutes * 60)));
-
-      if (hours < 10) {
-        hours = "0" + hours;
-      }
-      if (minutes < 10) {
-        minutes = "0" + minutes;
-      }
-      if (seconds < 10) {
-        seconds = "0" + seconds;
-      }
-      if (days > 0) {
-        document.querySelector(`#days${pid} span`).innerHTML=days;
-      }
-      else{
-        document.querySelector(`#days${pid} span`).innerHTML='';
-      }
-      document.querySelector(`#hours${pid} span`).innerHTML=hours ;
-      document.querySelector(`#minutes${pid} span`).innerHTML=minutes;
-      document.querySelector(`#seconds${pid} span`).innerHTML=seconds; }
 
   }
 }
@@ -307,14 +261,6 @@ export default {
     hasCountdown(){
       return this.offers.countdown =='true'
     }
-  }
-  ,methods:{
-  countDown(index, remain){
-      setInterval(function (){
-        this.makeTimer(index,remain)
-      }, 100000)
-    }
-
   }
 }
 
