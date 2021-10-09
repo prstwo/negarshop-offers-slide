@@ -2,9 +2,7 @@
   "name": "negarshop-vue",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://prstwo.github.io/negarshop-offers-slide",
   "scripts": {
-    "deploy": "node ./node_modules/vue-gh-pages/index.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
