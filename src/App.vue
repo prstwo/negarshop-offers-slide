@@ -16,7 +16,7 @@
               <div class="w-full offers-content-wrapper" dir="rtl">
                 <div class="vije-slider-content swiper-container swiper-container-vije">
                   <div class="w-full   site-radius bg-white overflow-x-hidden h-full relative swiper-wrapper ">
-                    <!--                  gallery main-->
+                    <!--gallery main-->
                     <div v-for="(offer, index) in offers" v-bind:key="offer.id" class=" w-full  bg-white site-radius h-full  relative top-0 left-0 swiper-slide " :class="index==0 ? 'active' : ''"  :data-id="index">
                       <div class=" flex flex-col flex-nowrap justify-start p-4 h-full w-full ">
                         <div class="flex flex-col sm:flex-row flex-nowrap h-full w-full">
@@ -30,7 +30,7 @@
                               {{offer.percent}}
                             </span>
                             <i class="fas fa-percent text-xs"></i>
-                        </span>
+                           </span>
                             </div>
 
                             <div class="hidden sm:block sm:w-full h-full">
@@ -53,8 +53,8 @@
                                             <del>
                                                 {{ offer.oldPrice }}
                                                </del>
-                                        تومان
-                                        </span>
+                                            تومان
+                                            </span>
                                          <span class="new-price">
                                             <span >
                                                 {{ offer.newPrice }}
@@ -68,7 +68,7 @@
                                        <span>
                                               {{list.title}}
                                        </span>
-                                  <span>
+                                      <span>
                                               {{list.details}}
                                        </span>
                                 </li>
